@@ -1,5 +1,14 @@
+import { useState } from "react";
+import BookCreate from "./assets/components/BookCreate";
+
 function App() {
-  return <div>App</div>;
+  const [books, setBooks] = useState([]);
+  return (
+    <div>
+      App
+      <BookCreate setBooks={setBooks} books={books} />
+    </div>
+  );
 }
 
 export default App;
