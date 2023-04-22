@@ -1,12 +1,17 @@
+import axios from "axios";
 import React, { useState } from "react";
 import BookEdit from "./BookEdit";
 
 function BookShow({ bookName, setBooks, bookId }) {
   const [editBook, setEditBook] = useState(false);
-  const deleteHandler = (bid) => {
-    setBooks((prev) => {
-      return prev.filter((each) => each.id !== bid);
-    });
+
+  const deleteHandler = async (bid) => {
+    //delet the record
+    const res = await axios.delete(`http://localhost:3001/books/${bid}`);
+
+    // to get updated data post delete request
+    const getAfterDelData = await axios.get("http://localhost:3001/books/");
+    setBooks(getAfterDelData.data);
   };
 
   const editHandler = () => {

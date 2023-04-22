@@ -1,18 +1,20 @@
+import axios from "axios";
 import React, { useState } from "react";
+
 function BookCreate({ setBooks, books }) {
   const [title, setTitle] = useState("");
-  const createHandler = function (event) {
+
+  const createHandler = async function (event) {
     event.preventDefault();
-    // const newId = books.length > 0 ? books[books.length - 1].id + 1 : 1;
+    // contacting db which we created to create a new name via post request
+    const response = await axios.post("http://localhost:3001/books", {
+      name: title,
+    });
+
+    console.log(response, "resr");
 
     setBooks((prev) => {
-      return [
-        ...prev,
-        {
-          id: books.length === 0 ? 1 : prev[prev.length - 1]?.id + 1,
-          name: title,
-        },
-      ];
+      return [...prev, response.data];
     });
     setTitle("");
   };
@@ -25,6 +27,7 @@ function BookCreate({ setBooks, books }) {
         <input
           className="input"
           value={title}
+          required
           onChange={(e) => setTitle(e.target.value)}
           type="text"
         />
