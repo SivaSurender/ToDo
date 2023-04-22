@@ -14,7 +14,15 @@ function BookShow({ bookName, setBooks, bookId }) {
   };
   return (
     <div className="book-show">
-      {!editBook ? bookName : <BookEdit />}
+      {!editBook ? (
+        bookName
+      ) : (
+        <BookEdit
+          bookId={bookId}
+          setBooks={setBooks}
+          setEditBook={setEditBook}
+        />
+      )}
       <div className="actions">
         <button
           onClick={() => deleteHandler(bookId)}
