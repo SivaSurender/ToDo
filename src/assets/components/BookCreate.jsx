@@ -1,8 +1,10 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { MainContext } from "../Context/MainContext";
 
 function BookCreate({ setBooks, books }) {
-  const [title, setTitle] = useState("");
+  // const [title, setTitle] = useState("");
+  const { title, setTitle } = useContext(MainContext);
 
   const createHandler = async function (event) {
     event.preventDefault();

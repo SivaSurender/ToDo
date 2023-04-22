@@ -1,9 +1,12 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { MainContext } from "../Context/MainContext";
 import BookEdit from "./BookEdit";
 
 function BookShow({ bookName, setBooks, bookId }) {
-  const [editBook, setEditBook] = useState(false);
+  // const [editBook, setEditBook] = useState(false);
+
+  const { editBook, setEditBook } = useContext(MainContext);
 
   const deleteHandler = async (bid) => {
     //delet the record

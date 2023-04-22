@@ -1,8 +1,12 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { MainContext } from "../Context/MainContext";
 
 function BookEdit({ bookId, setBooks, setEditBook, bookName }) {
-  const [editedName, setEditedName] = useState(bookName);
+  // const [editedName, setEditedName] = useState(bookName);
+
+  const { editedName, setEditedName } = useContext(MainContext);
+
   const editSubHandler = async (event) => {
     event.preventDefault();
     // update the record

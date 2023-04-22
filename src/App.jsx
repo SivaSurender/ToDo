@@ -1,10 +1,13 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import BookCreate from "./assets/components/BookCreate";
 import BookList from "./assets/components/BookList";
+import { MainContext } from "./assets/Context/MainContext";
 
 function App() {
-  const [books, setBooks] = useState([]);
+  // const [books, setBooks] = useState([]);
+
+  const { books, setBooks } = useContext(MainContext);
 
   useEffect(() => {
     const getInitialData = async () => {
