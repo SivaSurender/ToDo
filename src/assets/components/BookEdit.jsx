@@ -3,18 +3,17 @@ import React, { useContext, useEffect, useState } from "react";
 import { MainContext } from "../Context/MainContext";
 
 function BookEdit({ bookId, setBooks, setEditBook, bookName }) {
-  // const [editedName, setEditedName] = useState(bookName);
+  const [editedName, setEditedName] = useState(bookName);
 
-  const { editedName, setEditedName } = useContext(MainContext);
+  // const { editedName, setEditedName } = useContext(MainContext);
 
+  console.log(bookName, "bookName");
   const editSubHandler = async (event) => {
     event.preventDefault();
     // update the record
     const response = await axios.put(`http://localhost:3001/books/${bookId}`, {
       name: editedName,
     });
-
-    console.log(response, " after edit");
 
     // get the data after updation
     const getFinal = await axios.get("http://localhost:3001/books/");

@@ -4,7 +4,7 @@ import { MainContext } from "./MainContext";
 function MainProvider({ children }) {
   const [books, setBooks] = useState([]);
   const [title, setTitle] = useState("");
-  const [editedName, setEditedName] = useState("");
+
   const [editBook, setEditBook] = useState(false);
 
   const contextValues = {
@@ -12,8 +12,7 @@ function MainProvider({ children }) {
     setBooks,
     title,
     setTitle,
-    editedName,
-    setEditedName,
+
     editBook,
     setEditBook,
   };
