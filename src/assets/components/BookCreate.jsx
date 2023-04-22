@@ -6,7 +6,6 @@ function BookCreate({ setBooks, books }) {
     // const newId = books.length > 0 ? books[books.length - 1].id + 1 : 1;
 
     setBooks((prev) => {
-      console.log(prev, "prev");
       return [
         ...prev,
         {
@@ -17,12 +16,14 @@ function BookCreate({ setBooks, books }) {
     });
     setTitle("");
   };
-  console.log(books);
+
   return (
-    <div>
+    <div className = "book-create"> 
+        <h3>Add a book</h3>
       <form onSubmit={createHandler}>
-        <p htmlFor="topic">Choose the topic of music you want to add</p>
+        <p htmlFor="topic">Title</p>
         <input
+          className = "input"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           type="text"
