@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="app">
       <BookCreate setBooks={setBooks} books={books} />
-      <BookList books={books} />
+      <BookList setBooks={setBooks} books={books} />
     </div>
   );
 }

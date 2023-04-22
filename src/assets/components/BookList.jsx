@@ -1,12 +1,16 @@
 import React from "react";
 import BookShow from "./BookShow";
 
-function BookList({ books }) {
+function BookList({ books, setBooks }) {
   return (
     <>
       {books?.map((eachBook) => (
-        <div className="book-list">
-          <BookShow key={eachBook.id} bookName={eachBook.name} />
+        <div className="book-list" key={eachBook.id}>
+          <BookShow
+            setBooks={setBooks}
+            bookName={eachBook.name}
+            bookId={eachBook.id}
+          />
         </div>
       ))}
     </>
