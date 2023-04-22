@@ -14,6 +14,7 @@ function BookShow({ bookName, setBooks, bookId }) {
   };
   return (
     <div className="book-show">
+      <img src={`https://picsum.photos/seed/${bookId}/300/200`} alt="books" />
       {!editBook ? (
         bookName
       ) : (
@@ -21,6 +22,7 @@ function BookShow({ bookName, setBooks, bookId }) {
           bookId={bookId}
           setBooks={setBooks}
           setEditBook={setEditBook}
+          bookName={bookName}
         />
       )}
       <div className="actions">

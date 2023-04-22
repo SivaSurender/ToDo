@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-function BookEdit({ bookId, setBooks, setEditBook }) {
-  const [editedName, setEditedName] = useState("");
+function BookEdit({ bookId, setBooks, setEditBook, bookName }) {
+  const [editedName, setEditedName] = useState(bookName);
   const editSubHandler = (event) => {
     event.preventDefault();
 
