@@ -1,13 +1,13 @@
 import { useState } from "react";
 import BookCreate from "./assets/components/BookCreate";
-import BookShow from "./assets/components/BookShow";
+import BookList from "./assets/components/BookList";
 
 function App() {
   const [books, setBooks] = useState([]);
   return (
-    <div>
+    <div className="app">
       <BookCreate setBooks={setBooks} books={books} />
-      <BookShow books={books} />
+      <BookList books={books} />
     </div>
   );
 }

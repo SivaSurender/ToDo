@@ -18,17 +18,17 @@ function BookCreate({ setBooks, books }) {
   };
 
   return (
-    <div className = "book-create"> 
-        <h3>Add a book</h3>
+    <div className="book-create">
+      <h3>Add a book</h3>
       <form onSubmit={createHandler}>
         <p htmlFor="topic">Title</p>
         <input
-          className = "input"
+          className="input"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           type="text"
         />
-        <button>Add</button>
+        <button className="button">Add</button>
       </form>
     </div>
   );

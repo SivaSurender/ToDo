@@ -1,15 +1,7 @@
 import React from "react";
 
-function BookShow({ books }) {
-  return (
-    <div>
-      {books?.map((a) => (
-        <h1 onClick={() => console.log(a.id)} key={a.id}>
-          {a.name}
-        </h1>
-      ))}
-    </div>
-  );
+function BookShow({ bookName }) {
+  return <div className="book-show">{bookName}</div>;
 }
 
 export default BookShow;
