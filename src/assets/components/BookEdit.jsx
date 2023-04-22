@@ -19,6 +19,7 @@ function BookEdit({ bookId, setBooks, setEditBook, bookName }) {
     console.log(editedName);
     setEditBook(false);
   };
+
   return (
     <form className="book-edit" onSubmit={editSubHandler}>
       <label>Title</label>
