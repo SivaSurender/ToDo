@@ -3,10 +3,10 @@ import React, { useState, useContext } from "react";
 import { MainContext } from "../Context/MainContext";
 import BookEdit from "./BookEdit";
 
-function BookShow({ bookName, setBooks, bookId }) {
+function BookShow({ bookName, bookId }) {
   // const [editBook, setEditBook] = useState(false);
 
-  const { editBook, setEditBook } = useContext(MainContext);
+  const { editBook, setEditBook, setBooks } = useContext(MainContext);
 
   const deleteHandler = async (bid) => {
     //delet the record
@@ -28,8 +28,8 @@ function BookShow({ bookName, setBooks, bookId }) {
       ) : (
         <BookEdit
           bookId={bookId}
-          setBooks={setBooks}
-          setEditBook={setEditBook}
+          // setBooks={setBooks}
+          // setEditBook={setEditBook}
           bookName={bookName}
         />
       )}

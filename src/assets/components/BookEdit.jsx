@@ -2,10 +2,10 @@ import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { MainContext } from "../Context/MainContext";
 
-function BookEdit({ bookId, setBooks, setEditBook, bookName }) {
+function BookEdit({ bookId, bookName }) {
   const [editedName, setEditedName] = useState(bookName);
 
-  // const { editedName, setEditedName } = useContext(MainContext);
+  const { setBooks, setEditBook } = useContext(MainContext);
 
   console.log(bookName, "bookName");
   const editSubHandler = async (event) => {

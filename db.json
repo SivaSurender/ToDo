@@ -1,20 +1,8 @@
 {
   "books": [
     {
-      "name": "dsadsad",
-      "id": 1
-    },
-    {
-      "name": "one",
-      "id": 2
-    },
-    {
       "name": "two",
-      "id": 3
-    },
-    {
-      "name": "hfgsh",
-      "id": 4
+      "id": 2
     }
   ]
 }

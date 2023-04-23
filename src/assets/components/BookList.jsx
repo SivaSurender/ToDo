@@ -7,7 +7,7 @@ function BookList({ books, setBooks }) {
       {books?.map((eachBook) => (
         <div className="book-list" key={eachBook.id}>
           <BookShow
-            setBooks={setBooks}
+            // setBooks={setBooks}
             bookName={eachBook.name}
             bookId={eachBook.id}
           />
